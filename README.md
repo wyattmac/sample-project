@@ -30,6 +30,7 @@ Three factories. One safety computer. One sensor. One foundry. Agents think offl
 | Doc | What it is |
 |---|---|
 | [docs/VISION.md](docs/VISION.md) | **v8 — GIGAHOUSE.** The full plan. Supersedes v7. |
+| [docs/FLAWS.md](docs/FLAWS.md) | **Red team.** Where the plan is actually wrong. Read this next. |
 | [docs/ALGORITHM.md](docs/ALGORITHM.md) | The five-step production algorithm, applied to the house. |
 | [docs/CONSTITUTION.md](docs/CONSTITUTION.md) | H14–H23. The Czar's articles. Compiler errors, not vibes. |
 

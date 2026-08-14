@@ -4,6 +4,8 @@
 
 Supersedes v7 as program vision. v5/v6 machinery and gates remain normative. v7's constitution (H14–H18) is inherited, then tightened. Engineering plan, not financial advice. Tattoo it on the repo.
 
+**Red team:** [FLAWS.md](FLAWS.md) — unit economics, quote garbage, sample size, crowding, and the house metaphor. If a sentence here dies there, the sentence is costume.
+
 ---
 
 ## 0. The Algorithm, Applied to v7
@@ -293,7 +295,7 @@ Inherited absolute: H1–H13, interlocks per book, asymmetric autonomy (H12 toke
 
 ## 10. Honest Math — Attack These Numbers
 
-Same standard as v6 §9 / v7 §10. Judgment. Wide bars. Attack it.
+Same standard as v6 §9 / v7 §10. Judgment. Wide bars. Attack it. The attack is [FLAWS.md](FLAWS.md). The short version: these bars were not computed; Tier 0 lifts P(positive) by mixing in cash; report excess over the sweep you already had.
 
 - **Tier 0 (Certainty):** P(positive) ≈ **95%+** — rate capture, not alpha. Magnitude: tens of bps to ~1.5% on cash vs sweep drag. Covers the burn near six-figure equity. Real. Small. The correct foundation stone. The tunnels.
 - **Tier 1 (VRP + crush):** P(positive over 3–5y) ≈ **50–70%**. Earnings-crush adds breadth at similar prior. Left tail: defined risk + H15.
