@@ -147,7 +147,7 @@ A retail options stack is a layer cake of other people's factories: broker sweep
 
 **Blockers, restated as integration gates:**
 
-- **B7 — Photons.** Options-surface data tier sized for the scan universe (Theta full-surface or Databento OPRA subset) is priced *before* L1 is built. We do not fit a surface we cannot own. If the data is too expensive for the account size, the Sensor universe shrinks until the unit economics work. Coverage is a function of cash, not ambition.
+- **B7 — Photons.** Options data is **Theta Data** (not IBKR, not Databento). Standard ($80/mo) is the paper tape: chain snapshots + OPRA NBBO on **one** root. Full-universe Sensor coverage is priced before L1; if Theta + OPRA exceed excess over sweep, the universe stays at one symbol. Coverage is a function of cash, not ambition. See [DATA.md](DATA.md).
 - **B8 — Balance-sheet unlock.** Portfolio margin for box lending (≥ $110k). Below that, Certainty factory is T-bills-only. We do not pretend we have a lending desk when we have a sweep problem.
 
 A consumer GPU is overkill for L1. Good. Overkill is the correct amount of factory for a one-operator house. When surface-fit latency is the bottleneck we write the CUDA kernel. Not before. Automate last.

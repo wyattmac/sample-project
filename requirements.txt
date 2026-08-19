@@ -1,0 +1,2 @@
+# Optional until you run tools/theta_ping.py
+thetadata>=1.0.9

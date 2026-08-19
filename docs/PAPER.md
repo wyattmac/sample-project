@@ -33,7 +33,7 @@ If you cannot live with that paragraph, do not add clauses. Pick a different lif
 ## Entry (all must be true)
 
 1. DTE in window.
-2. IV rank ≥ 50 on that underlier (use whatever free rank you already have; log the source and the number). If you do not have IV rank without paying a data vendor, **do not buy a vendor for this.** Skip the week. Skipping is a valid ticket row with `status=passed` and a reason.
+2. IV rank ≥ 50 on that underlier, computed from **Theta** history on that same root (log `iv_rank_source=theta`). If you cannot compute rank yet, skip the week (`status=passed`) — do not borrow IV rank from a broker or a website.
 3. Concurrent paper max-loss (this ticket + open paper tickets) ≤ **3% of equity**.
 4. You can trade the package as a combo, not four naked legs "to be more efficient."
 
@@ -54,7 +54,9 @@ No adding width. No rolling into more risk. No "managing" that turns a defined-r
 | You buy | **ask** |
 | Combo credit | the credit you would get lifting/hitting the **combo** worst side, not the sum of mids |
 
-`fill_source` must be `worst`. Rows with `mid` are invalid for S4. Delete them or mark `status=void`.
+`fill_source` must be `worst`. Bid/ask come from Theta `option_snapshot_quote`, not from Interactive Brokers. Rows with `mid` are invalid for S4. Delete them or mark `status=void`.
+
+Combo NBBO is often not in the snapshot. Until we have a combo quote, **do not invent one by summing four mids.** Summing four *worst* sides is allowed and conservative (it overstates friction). Log that in `notes`.
 
 ## What to write on every `tickets.csv` row
 

@@ -38,10 +38,17 @@ Required fields:
 - options approval level
 - PDT status
 - portfolio margin: yes/no
-- monthly data budget you will actually pay, in dollars (default: **0**)
+- `data_vendor` (must be `theta` — see [DATA.md](DATA.md))
+- `theta_plan` (`standard` for paper NBBO; not Value; not Pro until S4)
+- monthly data budget you will actually pay Theta + OPRA (likely **80**, not 0)
 - hours per week you will actually give this (default: be honest)
+- `paper_underlier` (`SPY` or `XSP`)
 
-**Gate:** if monthly data budget is $0, there is no Sensor. Coverage is a function of cash. That was B7. We mean it now.
+**Data pipe is Theta. Not Interactive Brokers.** IBKR (or any broker) may hold the account later. It does not supply quotes, greeks, or history. Paper fills are Theta NBBO, worst side.
+
+**Gate:** Theta Standard is a quote tape for **one** underlier, not a license to scan 200 names. `tools/theta_ping.py` will refuse anything except SPY/XSP.
+
+**Gate:** if monthly data budget is $0, you do not have Theta, so you do not have paper quotes. Skip S3 or pay the invoice and log it. Coverage is a function of cash. That was B7. We mean it now.
 
 **Gate:** if sweep APY is within ~20 bps of `SGOV`, S1 is "leave it" or a one-ticket `SGOV` buy — not a laddering engine.
 
@@ -96,6 +103,7 @@ Mandate: [docs/PAPER.md](PAPER.md).
 - Entry/exit rules fit on one page. If you need "and also," you are collecting scanners. Stop.
 - **Credit is logged at the bid** (you are selling). Debits at the ask. Mid is a lie. Mark `fill_source=worst`.
 - Max loss per ticket ≤ 1% of equity. Concurrent paper risk ≤ 3% of equity. Same shape as H15, even on paper, so the muscle memory exists before the money does.
+- Quotes from Theta (`option_snapshot_quote` on that one root). Not TWS, not IBKR hist, not mid.
 - No live broker API. No LLM in anything that could be mistaken for an order.
 
 Ninety days of this is a small number of tickets. That is fine. That is the sample-size lesson arriving on time instead of as a NumPyro shrine.
@@ -107,7 +115,7 @@ Ninety days of this is a small number of tickets. That is fine. That is the samp
 Live is allowed to be *considered* when all of these are true:
 
 1. S0–S3 complete (90 days of paper, not 90 days of planning).
-2. `excess.py` net versus sweep, after invoices, is ≥ 0 — or invoices are $0 and you accept that cash was a settings page, not a funding engine.
+2. You have run `excess.py` **with the Theta invoice logged**. If net vs sweep is negative, you are funding a lab. Do not "fix" that by omitting the invoice or by scanning 200 names "since we're paying." Live is still not implied.
 3. Paper tickets used `fill_source=worst`, not mid.
 4. You can state the edge in one paragraph without "and also."
 5. First live size: one ticket, max loss you would not notice. Not a factory allocation.
@@ -121,7 +129,8 @@ If paper lost at honest fills, you do not "go live smaller." You stop. Synthetic
 Do not start:
 
 - Surface engine / SSVI / GPU fits
-- Whole-sky scanner fleet / Best Options Board
+- Whole-sky scanner fleet / Best Options Board / `expiration=*` on every root
+- Interactive Brokers (or any broker) as a market-data source
 - Event crush pipeline
 - Flow / GEX / vanna feeds
 - Bayesian ledger, Kelly sizer, shadow tournament, replay twin
@@ -137,10 +146,10 @@ v8's G0–G5 nodes are **not** the start. They are what we might earn the right 
 
 ## This week's work (the only queue)
 
-1. Fill `journal/operator.csv`.
+1. Fill `journal/operator.csv` (`data_vendor=theta`, `theta_plan=standard`, real budget).
 2. Park cash or log why sweep already wins. Add a `cash.csv` row.
-3. Log any data/compute/vendor cost in `invoices.csv` (zero rows is a valid, excellent state).
-4. Run `python3 tools/excess.py`.
-5. If you still have appetite, read [PAPER.md](PAPER.md) and log **zero or one** paper ticket this week at worst-side quotes. Not five. Not a backtest.
+3. Log the Theta invoice in `invoices.csv`. Run `python3 tools/excess.py` — Theta will likely eat the sweep edge. That is a chosen lab cost, not a funding strategy.
+4. `pip install thetadata` and `export THETADATA_API_KEY=...`. Run `python3 tools/theta_ping.py --symbol SPY` (or XSP). See [DATA.md](DATA.md).
+5. If the ping works, read [PAPER.md](PAPER.md) and log **zero or one** paper ticket this week at Theta bid/ask. Not five. Not a backtest. Not a second symbol.
 
 That is the start.

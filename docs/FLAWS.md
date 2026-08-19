@@ -44,14 +44,15 @@ Do the arithmetic without the slogan.
 
 **Box lending is not free money.** It needs portfolio margin (the plan says ≥ $110k — the real number moves, and PM approval is not a flag you flip), SPX/box permissions, assignment/exercise ops, and a rate that, after commissions and the box's own bid-ask, is often *close to T-bills*. You are not "becoming a lender." You are doing a more fragile T-bill.
 
-**The burn is the data, not the compute.** B7 is the actual business model. Full-surface snapshots across SPX/XSP, index ETFs, ~200 names, ES/NQ FOPs, stored so the replay twin can settle tick-for-tick, refreshed every minute — that is not a retail data bill. Theta / Databento OPRA-class feeds are **hundreds to thousands of dollars a month** once you want history *and* live *and* enough depth that SSVI is not a fit to noise. Add a GPU box if you want, but the GPU is not the line item.
+**The burn is the data, not the compute.** B7 is locked: **Theta Data**, not IBKR market data. Options Standard is about **$80/month** plus OPRA (retail non-pro is cheap; professional / non-display is not). That is ~$960/year before you stream the sky. Full-surface snapshots across 200 names, stored so a replay twin can settle tick-for-tick, is how $80 becomes a foundry. The pipe we actually start with is **one root (SPY or XSP)**. See [DATA.md](DATA.md).
 
 On a $100k account:
 
 | Item | Rough yearly |
 |---|---|
-| Extra yield vs a decent sweep, 30–80 bps on *unencumbered* cash (not the whole $100k — options tie cash up) | **$150–$600** |
-| Serious surface data + history for replay | **$3k–$30k+** |
+| Extra yield vs a decent sweep, 30–80 bps on *unencumbered* cash | **$150–$600** |
+| Theta Options Standard (the actual start: one root, NBBO) | **~$960** |
+| Whole-sky Sensor + history for replay (the vision) | **still thousands+/yr, plus OPRA professional/non-display if you are a "firm"** |
 | Commissions, fees, assignment mess | real |
 | Operator time, even at a cheap internal rate | **dominates everything** |
 

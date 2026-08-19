@@ -1,2 +1,2 @@
-broker,equity_usd,unencumbered_cash_usd,sweep_apy_pct,sgov_apy_pct,vehicle,vehicle_apy_pct,options_level,pdt,portfolio_margin,monthly_data_budget_usd,hours_per_week,paper_underlier,notes
-ibkr,100000,40000,4.70,5.18,SGOV,5.18,4,no,no,0,4,SPY,demo only — replace with your numbers
+broker,equity_usd,unencumbered_cash_usd,sweep_apy_pct,sgov_apy_pct,vehicle,vehicle_apy_pct,options_level,pdt,portfolio_margin,data_vendor,theta_plan,monthly_data_budget_usd,hours_per_week,paper_underlier,notes
+ibkr,100000,40000,4.70,5.18,SGOV,5.18,4,no,no,theta,standard,80,4,SPY,demo — broker may be IBKR; quotes are Theta
