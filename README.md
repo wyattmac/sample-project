@@ -2,7 +2,7 @@
 
 A personal options system. Engineering plan, not financial advice. No system is profitable by declaration.
 
-**Start here:** [docs/START.md](docs/START.md) — cash, invoices, one paper policy. Not the factory.
+**Start here:** [docs/START.md](docs/START.md). **What we use:** [docs/STACK.md](docs/STACK.md).
 
 ```
 python3 tools/excess.py
@@ -19,6 +19,7 @@ The only number that matters: **vehicle yield − sweep you already had − invo
 | Doc | What it is |
 |---|---|
 | [docs/START.md](docs/START.md) | **Where we start.** Operator sheet → park cash → journal → 90 days of one paper policy. |
+| [docs/STACK.md](docs/STACK.md) | **What we use.** One choice per slot. Theta Standard, SPY, SGOV, CSV. IBKR is not data. |
 | [docs/DATA.md](docs/DATA.md) | **Theta Data is the pipe.** IBKR is not a quote source. Standard plan, one underlier. |
 | [docs/PAPER.md](docs/PAPER.md) | The only Surface policy allowed before live: defined-risk SPY/XSP, worst-side fills. |
 | [docs/FLAWS.md](docs/FLAWS.md) | Red team. Why the factory is oversized. |

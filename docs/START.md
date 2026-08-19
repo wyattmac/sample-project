@@ -4,7 +4,7 @@ Not the Radar. Not the foundry. Not Cortex. Not seven desks renamed as three fac
 
 **We start with a spreadsheet of cash, invoices, and paper tickets — then we stop until those numbers are boring.**
 
-`VISION.md` is the ambition. `FLAWS.md` is why the ambition is oversized. This file is the build path. If a PR cannot point to a step here, it does not merge.
+`VISION.md` is the ambition. `FLAWS.md` is why the ambition is oversized. `STACK.md` is what we use. This file is the build path. If a PR cannot point to a step here, it does not merge.
 
 Engineering plan, not financial advice. Nothing here is an order.
 
@@ -42,7 +42,7 @@ Required fields:
 - `theta_plan` (`standard` for paper NBBO; not Value; not Pro until S4)
 - monthly data budget you will actually pay Theta + OPRA (likely **80**, not 0)
 - hours per week you will actually give this (default: be honest)
-- `paper_underlier` (`SPY` or `XSP`)
+- `paper_underlier` (`SPY` — see [STACK.md](STACK.md); XSP is a live upgrade, not a paper fork)
 
 **Data pipe is Theta. Not Interactive Brokers.** IBKR (or any broker) may hold the account later. It does not supply quotes, greeks, or history. Paper fills are Theta NBBO, worst side.
 
@@ -149,7 +149,7 @@ v8's G0–G5 nodes are **not** the start. They are what we might earn the right 
 1. Fill `journal/operator.csv` (`data_vendor=theta`, `theta_plan=standard`, real budget).
 2. Park cash or log why sweep already wins. Add a `cash.csv` row.
 3. Log the Theta invoice in `invoices.csv`. Run `python3 tools/excess.py` — Theta will likely eat the sweep edge. That is a chosen lab cost, not a funding strategy.
-4. `pip install thetadata` and `export THETADATA_API_KEY=...`. Run `python3 tools/theta_ping.py --symbol SPY` (or XSP). See [DATA.md](DATA.md).
+4. `pip install thetadata` and `export THETADATA_API_KEY=...`. Run `python3 tools/theta_ping.py --symbol SPY`. See [DATA.md](DATA.md) and [STACK.md](STACK.md).
 5. If the ping works, read [PAPER.md](PAPER.md) and log **zero or one** paper ticket this week at Theta bid/ask. Not five. Not a backtest. Not a second symbol.
 
 That is the start.

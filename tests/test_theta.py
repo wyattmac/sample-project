@@ -78,6 +78,9 @@ class ThetaPipeTests(unittest.TestCase):
     def test_vendor_is_theta_not_ibkr(self):
         self.assertEqual(MARKET_DATA_VENDOR, "theta")
         self.assertEqual(PAPER_ROOTS, frozenset({"SPY", "XSP"}))
+        from data.theta import DEFAULT_PAPER_ROOT
+
+        self.assertEqual(DEFAULT_PAPER_ROOT, "SPY")
 
     def test_rejects_universe_creep(self):
         with self.assertRaises(PaperRootError):

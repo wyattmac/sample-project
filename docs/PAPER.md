@@ -16,7 +16,8 @@ If you cannot live with that paragraph, do not add clauses. Pick a different lif
 
 ## Universe
 
-- **One** underlier: `SPY` or `XSP`. Write the choice in `journal/operator.csv` (`paper_underlier`).
+- **One** underlier: **`SPY`**. Write it in `journal/operator.csv` (`paper_underlier=SPY`).
+- XSP is the live upgrade (cash-settled, no early assignment) after S4, if you have index approval. Not a second paper book.
 - No single names. No earnings. No 0DTE. No FOMC/CPI overlays. Those are other policies.
 
 ## Structure (pick one, write it down, do not switch mid-window)

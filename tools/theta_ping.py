@@ -22,7 +22,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--symbol",
         default="SPY",
-        help="paper root only: SPY or XSP",
+        help="paper root: SPY (default). XSP allowed by the pipe, not by the paper mandate.",
     )
     args = parser.parse_args(argv)
     try:

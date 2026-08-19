@@ -7,6 +7,7 @@ from typing import Any, Optional, Protocol
 
 MARKET_DATA_VENDOR = "theta"
 PAPER_ROOTS = frozenset({"SPY", "XSP"})
+DEFAULT_PAPER_ROOT = "SPY"
 DEFAULT_MIN_DTE = 30
 DEFAULT_MAX_DTE = 45
 DEFAULT_STRIKE_RANGE = 8  # 8 above + 8 below + ATM ≈ 17 strikes, not the wing farm
