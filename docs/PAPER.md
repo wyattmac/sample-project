@@ -26,7 +26,7 @@ If you cannot live with that paragraph, do not add clauses. Pick a different lif
 
 - DTE at entry: 30–45
 - Short strikes: ~15-delta (call and put)
-- Long strikes: next width that caps max loss at ≤ **1% of equity** per ticket
+- Long strikes: next width that caps max loss at ≤ **1% of equity** per ticket. Cash tied up ≈ that max loss. Typical 1-lot SPY: **~$350–$850** depending on $5 vs $10 wings. See [SIZE.md](SIZE.md).
 - No naked shorts. Longs on before or with the shorts. Always.
 
 **Allowed substitute:** a single credit put spread, same DTE and delta, same max-loss cap — if the condor's call side is too wide to fit the 1% cap. Still defined risk.

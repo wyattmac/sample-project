@@ -22,7 +22,8 @@ The only number that matters: **vehicle yield − sweep you already had − invo
 | [docs/STACK.md](docs/STACK.md) | **What we use.** One choice per slot. Theta Standard, SPY, SGOV, CSV. IBKR is not data. |
 | [docs/SCOPE.md](docs/SCOPE.md) | **How much to build.** Start vs vision. Most of the app is fixture-tape; Theta is one adapter. |
 | [docs/DATA.md](docs/DATA.md) | **Theta Data is the pipe.** IBKR is not a quote source. Standard plan, one underlier. |
-| [docs/PAPER.md](docs/PAPER.md) | The only Surface policy allowed before live: defined-risk SPY/XSP, worst-side fills. |
+| [docs/SIZE.md](docs/SIZE.md) | **Cash per ticket.** Defined-risk condor: about $350–$850 a lot, capped at 1% of equity. |
+| [docs/PAPER.md](docs/PAPER.md) | The only Surface policy: SPY iron condor, 30–45 DTE, worst-side fills. |
 | [docs/FLAWS.md](docs/FLAWS.md) | Red team. Why the factory is oversized. |
 | [docs/VISION.md](docs/VISION.md) | v8 — GIGAHOUSE. Ambition. Not the build queue. |
 | [docs/ALGORITHM.md](docs/ALGORITHM.md) | Five-step production algorithm. |
