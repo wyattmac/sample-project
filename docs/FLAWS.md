@@ -193,6 +193,8 @@ A realistic personal system that keeps the doctrine and throws away the costume:
 
 That list is smaller than G0–G5. It is also the only version that does not require you to be a prop firm, a data vendor, and a Bayesian shop before you have a fill.
 
+The operational version of this list is [START.md](START.md). If you are about to build a factory node, you are in the wrong file.
+
 ---
 
 ## 11. Closing, without the tattoo

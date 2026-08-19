@@ -6,6 +6,8 @@ Supersedes v7 as program vision. v5/v6 machinery and gates remain normative. v7'
 
 **Red team:** [FLAWS.md](FLAWS.md) — unit economics, quote garbage, sample size, crowding, and the house metaphor. If a sentence here dies there, the sentence is costume.
 
+**Build path:** [START.md](START.md) — cash, invoices, one paper policy. G0–G5 are not the start.
+
 ---
 
 ## 0. The Algorithm, Applied to v7

@@ -1,0 +1,3 @@
+date,status,underlier,structure,dte,iv_rank,iv_rank_source,max_loss_usd,credit_usd,fill_source,thesis,result_usd,notes
+2026-08-12,paper,SPY,iron_condor,37,62,example,800,220,worst,IV rank elevated; defined-risk short 15d,50,demo settled at worst-side marks
+2026-08-15,passed,SPY,iron_condor,33,41,example,,,,,IV rank below 50,,skip
