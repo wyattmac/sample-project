@@ -4,7 +4,7 @@ Not the Radar. Not the foundry. Not Cortex. Not seven desks renamed as three fac
 
 **We start with a spreadsheet of cash, invoices, and paper tickets — then we stop until those numbers are boring.**
 
-`VISION.md` is the ambition. `FLAWS.md` is why the ambition is oversized. `STACK.md` is what we use. `SCOPE.md` is how much we actually build. This file is the build path. If a PR cannot point to a step here, it does not merge.
+The operational queue is now [NEXT.md](NEXT.md). This file is the original build path. If they conflict, NEXT wins.
 
 Engineering plan, not financial advice. Nothing here is an order.
 

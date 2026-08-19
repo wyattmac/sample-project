@@ -1,6 +1,6 @@
 # GIGAHOUSE
 
-A paper SPY iron condor. Engineering plan, not financial advice.
+**Start here:** [docs/NEXT.md](docs/NEXT.md) — run the command. Do not add a factory.
 
 ```
 python3 -m paper --equity 100000          # dry-run off a fixture (no API key)
@@ -15,7 +15,7 @@ Theta is optional (`--live`). Interactive Brokers is not a quote source. The rul
 
 | Doc | What it is |
 |---|---|
-| [docs/START.md](docs/START.md) | Build path |
+| [docs/NEXT.md](docs/NEXT.md) | **What to do now.** Run the command. `--mark` only after five rows. Automate last. |
 | [docs/STACK.md](docs/STACK.md) | What we use |
 | [docs/PAPER.md](docs/PAPER.md) | The condor rule |
 | [docs/SIZE.md](docs/SIZE.md) | Cash per ticket |
