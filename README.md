@@ -20,6 +20,7 @@ The only number that matters: **vehicle yield − sweep you already had − invo
 |---|---|
 | [docs/START.md](docs/START.md) | **Where we start.** Operator sheet → park cash → journal → 90 days of one paper policy. |
 | [docs/STACK.md](docs/STACK.md) | **What we use.** One choice per slot. Theta Standard, SPY, SGOV, CSV. IBKR is not data. |
+| [docs/SCOPE.md](docs/SCOPE.md) | **How much to build.** Start vs vision. Most of the app is fixture-tape; Theta is one adapter. |
 | [docs/DATA.md](docs/DATA.md) | **Theta Data is the pipe.** IBKR is not a quote source. Standard plan, one underlier. |
 | [docs/PAPER.md](docs/PAPER.md) | The only Surface policy allowed before live: defined-risk SPY/XSP, worst-side fills. |
 | [docs/FLAWS.md](docs/FLAWS.md) | Red team. Why the factory is oversized. |
