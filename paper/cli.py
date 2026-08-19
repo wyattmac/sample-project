@@ -12,6 +12,7 @@ from paper.journal import (
     load_operator,
     open_max_loss,
 )
+from paper.mark import mark_open
 from paper.picker import pick
 from paper.policy import SYMBOL
 from paper.tape import PaperRootError, load
@@ -58,10 +59,21 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="print the kill-rule scorekeeper and cash excess",
     )
+    parser.add_argument(
+        "--mark",
+        action="store_true",
+        help="revalue open paper tickets on this tape (worst side); close on 50% / 21 DTE / short tested",
+    )
     args = parser.parse_args(argv)
 
-    if args.verdict and not args.write:
-        sys.stdout.write(rule_verdict(args.journal))
+    def _load_tape():
+        try:
+            return load(live=args.live, fixture=args.fixture)
+        except (PaperRootError, ImportError, RuntimeError, FileNotFoundError) as e:
+            sys.stderr.write(f"error: {e}\n")
+            return None
+
+    def _print_excess() -> None:
         tools = Path(__file__).resolve().parents[1] / "tools"
         sys.path.insert(0, str(tools))
         try:
@@ -70,6 +82,27 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write(excess.run(args.journal))
         except Exception as e:
             sys.stdout.write(f"(excess unavailable: {e})\n")
+
+    if args.mark:
+        snap = _load_tape()
+        if snap is None:
+            return 2
+        reports = mark_open(snap, args.journal)
+        print(f"tape:     {snap.source}  as_of={snap.as_of.isoformat()}")
+        if not reports:
+            print("mark:     no open paper tickets")
+        for r in reports:
+            extra = f"  pnl=${r.pnl_usd:.0f}" if r.pnl_usd is not None else ""
+            print(f"mark:     {r.action:8} {r.date}  {r.reason}{extra}")
+        print()
+        if not args.write:
+            if args.verdict:
+                sys.stdout.write(rule_verdict(args.journal))
+            return 0
+
+    if args.verdict and not args.write:
+        sys.stdout.write(rule_verdict(args.journal))
+        _print_excess()
         return 0
 
     op = load_operator(args.journal)

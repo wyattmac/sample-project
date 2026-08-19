@@ -148,11 +148,11 @@ v8's G0–G5 nodes are **not** the start. They are what we might earn the right 
 
 1. Fill `journal/operator.csv` (`data_vendor=theta`, `theta_plan=standard`, `paper_underlier=SPY`, real equity).
 2. Park cash or log why sweep already wins. Add a `cash.csv` row. Log the Theta invoice if you pay it.
-3. Dry-run the app (no API key):
+3. Every session:
 
 ```
-python3 -m paper --equity 100000
-python3 -m paper --write --equity 100000
+python3 -m paper --mark --equity YOUR_EQUITY
+python3 -m paper --write --equity YOUR_EQUITY
 python3 -m paper --verdict
 ```
 

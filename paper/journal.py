@@ -19,8 +19,15 @@ TICKET_FIELDS = [
     "underlier",
     "structure",
     "dte",
+    "expiration",
     "iv_rank",
     "iv_rank_source",
+    "width",
+    "contracts",
+    "short_put",
+    "long_put",
+    "short_call",
+    "long_call",
     "max_loss_usd",
     "credit_usd",
     "fill_source",
@@ -95,6 +102,20 @@ def settled_paper(journal: Path | None = None) -> tuple[int, float]:
     return n, pnl
 
 
+def write_tickets(rows: list[dict], journal: Path | None = None) -> Path:
+    path = (journal or DEFAULT_JOURNAL) / "tickets.csv"
+    with path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=TICKET_FIELDS, extrasaction="ignore")
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({k: row.get(k, "") or "" for k in TICKET_FIELDS})
+    return path
+
+
+def load_tickets(journal: Path | None = None) -> list[dict]:
+    return _rows((journal or DEFAULT_JOURNAL) / "tickets.csv")
+
+
 def append_decision(
     decision: Decision,
     *,
@@ -114,8 +135,15 @@ def append_decision(
         "underlier": decision.underlier,
         "structure": decision.structure if decision.take else "",
         "dte": _blank(decision.dte),
+        "expiration": _blank(decision.expiration),
         "iv_rank": _blank(decision.iv_rank),
         "iv_rank_source": decision.iv_rank_source,
+        "width": _blank(decision.width if decision.take else None),
+        "contracts": _blank(decision.contracts if decision.take else None),
+        "short_put": _blank(decision.short_put if decision.take else None),
+        "long_put": _blank(decision.long_put if decision.take else None),
+        "short_call": _blank(decision.short_call if decision.take else None),
+        "long_call": _blank(decision.long_call if decision.take else None),
         "max_loss_usd": _blank(decision.max_loss_usd if decision.take else None),
         "credit_usd": _blank(decision.credit_usd if decision.take else None),
         "fill_source": fill,

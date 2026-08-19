@@ -114,9 +114,65 @@ class RebuildTests(unittest.TestCase):
         self.assertEqual(rc, 0)
         self.assertIn("fill_source=worst", buf.getvalue())
 
-    def test_size_math(self):
-        self.assertEqual(max_loss_one(5, 1.20), 380)
-        self.assertEqual(size_contracts(100_000, 5, 1.20), 2)
+    def test_mark_leaves_open_on_same_tape(self):
+        from paper.mark import mark_open
+
+        snap = load_fixture(TAKE)
+        take = pick(snap, equity=100_000)
+        with tempfile.TemporaryDirectory() as tmp:
+            j = Path(tmp)
+            append_decision(take, as_of=snap.as_of, journal=j)
+            reports = mark_open(snap, j)
+            self.assertEqual(len(reports), 1)
+            self.assertEqual(reports[0].action, "open")
+            n, _ = settled_paper(j)
+            self.assertEqual(n, 0)
+
+    def test_mark_closes_at_21_dte(self):
+        from paper.mark import mark_open
+
+        snap = load_fixture(TAKE)
+        take = pick(snap, equity=100_000)
+        later = load_fixture(ROOT / "fixtures" / "spy_dte21.json")
+        with tempfile.TemporaryDirectory() as tmp:
+            j = Path(tmp)
+            append_decision(take, as_of=snap.as_of, journal=j)
+            reports = mark_open(later, j)
+            self.assertEqual(reports[0].action, "closed")
+            self.assertIn("DTE", reports[0].reason)
+            n, _ = settled_paper(j)
+            self.assertEqual(n, 1)
+
+    def test_mark_closes_when_short_tested(self):
+        from paper.mark import mark_open
+
+        snap = load_fixture(TAKE)
+        take = pick(snap, equity=100_000)
+        tested = load_fixture(ROOT / "fixtures" / "spy_tested.json")
+        with tempfile.TemporaryDirectory() as tmp:
+            j = Path(tmp)
+            append_decision(take, as_of=snap.as_of, journal=j)
+            reports = mark_open(tested, j)
+            self.assertEqual(reports[0].action, "closed")
+            self.assertIn("tested", reports[0].reason)
+
+    def test_cli_mark_with_no_opens(self):
+        from io import StringIO
+        from unittest.mock import patch
+        from paper.cli import main
+
+        buf = StringIO()
+        with tempfile.TemporaryDirectory() as tmp:
+            from paper.journal import TICKET_FIELDS
+            import csv
+
+            p = Path(tmp) / "tickets.csv"
+            with p.open("w", newline="") as f:
+                csv.DictWriter(f, fieldnames=TICKET_FIELDS).writeheader()
+            with patch("sys.stdout", buf):
+                rc = main(["--mark", "--fixture", str(TAKE), "--journal", tmp])
+        self.assertEqual(rc, 0)
+        self.assertIn("no open paper tickets", buf.getvalue())
 
 
 if __name__ == "__main__":

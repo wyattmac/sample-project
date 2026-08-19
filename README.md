@@ -3,9 +3,9 @@
 **Start here:** [docs/NEXT.md](docs/NEXT.md) — run the command. Do not add a factory.
 
 ```
-python3 -m paper --equity 100000          # dry-run off a fixture (no API key)
-python3 -m paper --write --equity 100000  # append journal/tickets.csv
-python3 -m paper --verdict                # kill-rule + cash excess
+python3 -m paper --mark --equity 100000
+python3 -m paper --write --equity 100000
+python3 -m paper --verdict
 python3 -m unittest discover -s tests -q
 ```
 
