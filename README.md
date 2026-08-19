@@ -1,37 +1,28 @@
 # GIGAHOUSE
 
-A personal options system. Engineering plan, not financial advice. No system is profitable by declaration.
-
-**Start here:** [docs/START.md](docs/START.md). **What we use:** [docs/STACK.md](docs/STACK.md).
+A paper SPY iron condor. Engineering plan, not financial advice.
 
 ```
-python3 tools/excess.py
-python3 tools/theta_ping.py --symbol SPY
-python3 tests/test_excess.py tests/test_theta.py
+python3 -m paper --equity 100000          # dry-run off a fixture (no API key)
+python3 -m paper --write --equity 100000  # append journal/tickets.csv
+python3 -m paper --verdict                # kill-rule + cash excess
+python3 -m unittest discover -s tests -q
 ```
 
-Options data is **Theta Data**, not Interactive Brokers. See [docs/DATA.md](docs/DATA.md).
-
-The only number that matters: **vehicle yield − sweep you already had − invoices.**
+Theta is optional (`--live`). Interactive Brokers is not a quote source. The rule does not learn. See [docs/REBUILD.md](docs/REBUILD.md).
 
 ## Docs
 
 | Doc | What it is |
 |---|---|
-| [docs/START.md](docs/START.md) | **Where we start.** Operator sheet → park cash → journal → 90 days of one paper policy. |
-| [docs/STACK.md](docs/STACK.md) | **What we use.** One choice per slot. Theta Standard, SPY, SGOV, CSV. IBKR is not data. |
-| [docs/SCOPE.md](docs/SCOPE.md) | **How much to build.** Start vs vision. Most of the app is fixture-tape; Theta is one adapter. |
-| [docs/DATA.md](docs/DATA.md) | **Theta Data is the pipe.** IBKR is not a quote source. Standard plan, one underlier. |
-| [docs/SIZE.md](docs/SIZE.md) | **Cash per ticket.** Defined-risk condor: about $350–$850 a lot, capped at 1% of equity. |
-| [docs/REBUILD.md](docs/REBUILD.md) | **Second pass.** Delete the factory. One command, one condor, one CSV. |
-| [docs/PAPER.md](docs/PAPER.md) | The only Surface policy: SPY iron condor, 30–45 DTE, worst-side fills. |
-| [docs/FLAWS.md](docs/FLAWS.md) | Red team. Why the factory is oversized. |
-| [docs/VISION.md](docs/VISION.md) | v8 — GIGAHOUSE. Ambition. Not the build queue. |
-| [docs/ALGORITHM.md](docs/ALGORITHM.md) | Five-step production algorithm. |
-| [docs/CONSTITUTION.md](docs/CONSTITUTION.md) | H14–H23. |
-
-Defined risk always. No naked shorts. No LLM in a live path. Synthetic evidence only demotes. The Czar is you.
+| [docs/START.md](docs/START.md) | Build path |
+| [docs/STACK.md](docs/STACK.md) | What we use |
+| [docs/PAPER.md](docs/PAPER.md) | The condor rule |
+| [docs/SIZE.md](docs/SIZE.md) | Cash per ticket |
+| [docs/LEARN.md](docs/LEARN.md) | Scorekeeper, not a model |
+| [docs/REBUILD.md](docs/REBUILD.md) | Why this is the app |
+| [docs/FLAWS.md](docs/FLAWS.md) | Why the factory is oversized |
 
 ## License
 
-MIT. The plan is not a product, not a solicitation, and not advice.
+MIT.

@@ -146,10 +146,17 @@ v8's G0–G5 nodes are **not** the start. They are what we might earn the right 
 
 ## This week's work (the only queue)
 
-1. Fill `journal/operator.csv` (`data_vendor=theta`, `theta_plan=standard`, real budget).
-2. Park cash or log why sweep already wins. Add a `cash.csv` row.
-3. Log the Theta invoice in `invoices.csv`. Run `python3 tools/excess.py` — Theta will likely eat the sweep edge. That is a chosen lab cost, not a funding strategy.
-4. `pip install thetadata` and `export THETADATA_API_KEY=...`. Run `python3 tools/theta_ping.py --symbol SPY`. See [DATA.md](DATA.md) and [STACK.md](STACK.md).
-5. If the ping works, read [PAPER.md](PAPER.md) and log **zero or one** paper ticket this week at Theta bid/ask. Not five. Not a backtest. Not a second symbol.
+1. Fill `journal/operator.csv` (`data_vendor=theta`, `theta_plan=standard`, `paper_underlier=SPY`, real equity).
+2. Park cash or log why sweep already wins. Add a `cash.csv` row. Log the Theta invoice if you pay it.
+3. Dry-run the app (no API key):
+
+```
+python3 -m paper --equity 100000
+python3 -m paper --write --equity 100000
+python3 -m paper --verdict
+```
+
+4. Optional: `python3 -m paper --live --equity 100000` with `THETADATA_API_KEY` — SPY only.
+5. One real paper row per session at worst-side fills. Not five. Not a backtest. Not a second symbol.
 
 That is the start.

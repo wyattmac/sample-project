@@ -16,20 +16,20 @@ Not a calendar. Subsystems and blockages. Not financial advice.
 
 **The app we are building is A, then B if A survives.** C is not a remaining coding queue. It is a vision document. Asking “how much to get to the full version” and meaning C is how this project dies of complexity (H22).
 
-Already in the repo: journal CSVs, `excess.py`, Theta ping + `ThetaLike` protocol, tests with a fake client, the constitution on paper.
+Already in the repo: `python3 -m paper` (tape → picker → journal → verdict), fixture chains, excess, tests. Theta is `--live` only.
 
 ---
 
-## A — remaining code (the actual next work)
+## A — the Start app (built)
 
 | Module | Needs live Theta? | Notes |
 |---|---|---|
-| Fixture tape (`tests/fixtures/spy_chain.json`) | No | Frozen NBBO + greeks for one expiry. The default backend when no API key is set. |
-| IV rank on SPY from history | No if we ship a recorded IV series; live Theta only to refresh it | Skip-the-week path already exists if rank is missing. |
-| Condor picker (30–45 DTE, ~15Δ, 1% cap, worst-side credit) | No | Pure functions over quotes. |
-| `tools/paper_ticket.py` → `journal/tickets.csv` | No | Writes paper/passed rows. Refuses mid. |
-| Operator validation | No | `data_vendor=theta`, `paper_underlier=SPY`. |
-| Theta live adapter | Yes, only this file | `ThetaClient` behind the protocol we already have. Swap fixture → live without touching the picker. |
+| Fixture tape (`fixtures/spy_take.json`) | No | **Built.** Default backend. |
+| IV rank on the snapshot | No | **Built.** Missing or < 50 → pass. |
+| Condor picker | No | **Built.** `paper.picker`. |
+| `python3 -m paper --write` | No | **Built.** Appends `journal/tickets.csv`. Refuses mid. |
+| Operator / 1% / 3% caps | No | **Built.** |
+| Theta live adapter | Yes | **Built** as `--live`. Off-hours often empty. |
 
 That is the rest of “the app” as START defines it. Most of it is logic and CSV I/O. The API is one adapter.
 

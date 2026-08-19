@@ -1,25 +1,3 @@
-"""Data plane. Options quotes come from Theta, never from a broker."""
+from paper.tape import PaperRootError, load_fixture, require_spy
 
-from .theta import (
-    MARKET_DATA_VENDOR,
-    PAPER_ROOTS,
-    PaperRootError,
-    PingResult,
-    Quote,
-    connect,
-    paper_root,
-    ping,
-    snapshot_quotes,
-)
-
-__all__ = [
-    "MARKET_DATA_VENDOR",
-    "PAPER_ROOTS",
-    "PaperRootError",
-    "PingResult",
-    "Quote",
-    "connect",
-    "paper_root",
-    "ping",
-    "snapshot_quotes",
-]
+__all__ = ["PaperRootError", "load_fixture", "require_spy"]

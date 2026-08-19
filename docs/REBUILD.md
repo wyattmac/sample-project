@@ -51,10 +51,12 @@ The rebuilt app is four functions:
 One CLI:
 
 ```
-python3 -m paper
+python3 -m paper --equity 100000
+python3 -m paper --write --equity 100000
+python3 -m paper --verdict
 ```
 
-No UI until that command is boring. A webpage that cannot change a take/pass is decoration.
+This exists. Default tape is a fixture. `--live` is Theta SPY. No UI.
 
 ---
 

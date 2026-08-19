@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Ping Theta Data for the single paper underlier. Not a scanner.
-
-  export THETADATA_API_KEY=...
-  python3 tools/theta_ping.py --symbol SPY
-"""
+"""Ping Theta for SPY. Prefer: python3 -m paper --live"""
 
 from __future__ import annotations
 
@@ -11,39 +7,27 @@ import argparse
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from data.theta import PaperRootError, ping  # noqa: E402
+from paper.tape import PaperRootError, load_theta, require_spy  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--symbol",
-        default="SPY",
-        help="paper root: SPY (default). XSP allowed by the pipe, not by the paper mandate.",
-    )
+    parser.add_argument("--symbol", default="SPY")
     args = parser.parse_args(argv)
     try:
-        result = ping(args.symbol)
-    except PaperRootError as e:
+        require_spy(args.symbol)
+        snap = load_theta(args.symbol)
+    except (PaperRootError, ImportError, RuntimeError) as e:
         sys.stderr.write(f"error: {e}\n")
         return 2
-    except ImportError as e:
-        sys.stderr.write(f"error: {e}\n")
-        return 2
-    print(f"vendor:              {result.vendor}")
-    print(f"symbol:              {result.symbol}")
-    print(f"expirations listed:  {result.expiration_count}")
-    window = ", ".join(d.isoformat() for d in result.window_expirations) or "(none)"
+    print(f"vendor:              theta")
+    print(f"symbol:              {snap.symbol}")
+    print(f"source:              {snap.source}")
+    print(f"quote rows:          {len(snap.quotes)}")
+    window = ", ".join(d.isoformat() for d in snap.window_expirations()) or "(none)"
     print(f"30-45 DTE window:    {window}")
-    print(f"quote expiration:    {result.quote_expiration or '(none)'}")
-    print(f"quote rows:          {result.quote_count}")
-    print(f"note:                {result.note}")
-    if result.vendor != "theta":
-        sys.stderr.write("error: market data vendor is not theta\n")
-        return 2
     return 0
 
 

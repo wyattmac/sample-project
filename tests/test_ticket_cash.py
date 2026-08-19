@@ -15,13 +15,13 @@ class TicketCashTests(unittest.TestCase):
         self.assertEqual(s["max_loss_1lot"], 380)
         self.assertEqual(s["contracts"], 2)  # 1% of 100k = 1000; 1000/380 = 2
         self.assertEqual(s["cash_this_ticket"], 760)
-        self.assertIn("2 lot(s)", ticket_cash.render(s))
+        self.assertIn("2 lot(s)", ticket_cash.render(100_000, 5, 1.20))
 
     def test_over_cap_is_skip(self):
         s = ticket_cash.size(50_000, 10, 1.00)
         self.assertEqual(s["max_loss_1lot"], 900)
         self.assertEqual(s["contracts"], 0)
-        self.assertIn("Skip", ticket_cash.render(s))
+        self.assertIn("Skip", ticket_cash.render(50_000, 10, 1.00))
 
     def test_rejects_credit_wider_than_wings(self):
         with self.assertRaises(ValueError):

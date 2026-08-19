@@ -1,0 +1,603 @@
+{
+  "as_of": "2026-08-19",
+  "symbol": "SPY",
+  "spot": 600.0,
+  "iv_rank": 41,
+  "iv_rank_source": "fixture",
+  "quotes": [
+    {
+      "expiration": "2026-09-25",
+      "strike": 520.0,
+      "right": "P",
+      "bid": 0.01,
+      "ask": 0.29,
+      "delta": -0.0113,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 520.0,
+      "right": "C",
+      "bid": 80.01,
+      "ask": 80.29,
+      "delta": 0.9887,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 525.0,
+      "right": "P",
+      "bid": 0.1,
+      "ask": 0.36,
+      "delta": -0.0166,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 525.0,
+      "right": "C",
+      "bid": 75.1,
+      "ask": 75.36,
+      "delta": 0.9834,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 530.0,
+      "right": "P",
+      "bid": 0.22,
+      "ask": 0.47,
+      "delta": -0.0239,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 530.0,
+      "right": "C",
+      "bid": 70.22,
+      "ask": 70.47,
+      "delta": 0.9761,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 535.0,
+      "right": "P",
+      "bid": 0.4,
+      "ask": 0.64,
+      "delta": -0.0334,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 535.0,
+      "right": "C",
+      "bid": 65.4,
+      "ask": 65.64,
+      "delta": 0.9666,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 540.0,
+      "right": "P",
+      "bid": 0.63,
+      "ask": 0.85,
+      "delta": -0.0459,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 540.0,
+      "right": "C",
+      "bid": 60.63,
+      "ask": 60.85,
+      "delta": 0.9541,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 545.0,
+      "right": "P",
+      "bid": 0.94,
+      "ask": 1.15,
+      "delta": -0.0616,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 545.0,
+      "right": "C",
+      "bid": 55.94,
+      "ask": 56.14,
+      "delta": 0.9384,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 550.0,
+      "right": "P",
+      "bid": 1.35,
+      "ask": 1.54,
+      "delta": -0.081,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 550.0,
+      "right": "C",
+      "bid": 51.35,
+      "ask": 51.54,
+      "delta": 0.919,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 555.0,
+      "right": "P",
+      "bid": 1.87,
+      "ask": 2.04,
+      "delta": -0.1045,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 555.0,
+      "right": "C",
+      "bid": 46.87,
+      "ask": 47.04,
+      "delta": 0.8955,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 560.0,
+      "right": "P",
+      "bid": 2.54,
+      "ask": 2.7,
+      "delta": -0.1324,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 560.0,
+      "right": "C",
+      "bid": 42.54,
+      "ask": 42.7,
+      "delta": 0.8676,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 565.0,
+      "right": "P",
+      "bid": 3.36,
+      "ask": 3.5,
+      "delta": -0.1646,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 565.0,
+      "right": "C",
+      "bid": 38.36,
+      "ask": 38.51,
+      "delta": 0.8354,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 570.0,
+      "right": "P",
+      "bid": 4.37,
+      "ask": 4.5,
+      "delta": -0.2012,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 570.0,
+      "right": "C",
+      "bid": 34.37,
+      "ask": 34.5,
+      "delta": 0.7988,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 575.0,
+      "right": "P",
+      "bid": 5.58,
+      "ask": 5.7,
+      "delta": -0.2419,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 575.0,
+      "right": "C",
+      "bid": 30.58,
+      "ask": 30.69,
+      "delta": 0.7581,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 580.0,
+      "right": "P",
+      "bid": 7.01,
+      "ask": 7.11,
+      "delta": -0.2863,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 580.0,
+      "right": "C",
+      "bid": 27.01,
+      "ask": 27.11,
+      "delta": 0.7137,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 585.0,
+      "right": "P",
+      "bid": 8.68,
+      "ask": 8.77,
+      "delta": -0.3338,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 585.0,
+      "right": "C",
+      "bid": 23.68,
+      "ask": 23.77,
+      "delta": 0.6662,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 590.0,
+      "right": "P",
+      "bid": 10.6,
+      "ask": 10.67,
+      "delta": -0.3837,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 590.0,
+      "right": "C",
+      "bid": 20.6,
+      "ask": 20.67,
+      "delta": 0.6163,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 595.0,
+      "right": "P",
+      "bid": 12.78,
+      "ask": 12.83,
+      "delta": -0.4352,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 595.0,
+      "right": "C",
+      "bid": 17.78,
+      "ask": 17.84,
+      "delta": 0.5648,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 600.0,
+      "right": "P",
+      "bid": 15.21,
+      "ask": 15.26,
+      "delta": -0.4873,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 600.0,
+      "right": "C",
+      "bid": 15.21,
+      "ask": 15.26,
+      "delta": 0.5127,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 605.0,
+      "right": "P",
+      "bid": 17.91,
+      "ask": 17.96,
+      "delta": -0.5392,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 605.0,
+      "right": "C",
+      "bid": 12.91,
+      "ask": 12.96,
+      "delta": 0.4608,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 610.0,
+      "right": "P",
+      "bid": 20.85,
+      "ask": 20.92,
+      "delta": -0.5901,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 610.0,
+      "right": "C",
+      "bid": 10.85,
+      "ask": 10.92,
+      "delta": 0.4099,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 615.0,
+      "right": "P",
+      "bid": 24.03,
+      "ask": 24.12,
+      "delta": -0.6391,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 615.0,
+      "right": "C",
+      "bid": 9.03,
+      "ask": 9.12,
+      "delta": 0.3609,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 620.0,
+      "right": "P",
+      "bid": 27.45,
+      "ask": 27.55,
+      "delta": -0.6855,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 620.0,
+      "right": "C",
+      "bid": 7.45,
+      "ask": 7.55,
+      "delta": 0.3145,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 625.0,
+      "right": "P",
+      "bid": 31.09,
+      "ask": 31.2,
+      "delta": -0.7288,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 625.0,
+      "right": "C",
+      "bid": 6.09,
+      "ask": 6.21,
+      "delta": 0.2712,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 630.0,
+      "right": "P",
+      "bid": 34.93,
+      "ask": 35.06,
+      "delta": -0.7686,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 630.0,
+      "right": "C",
+      "bid": 4.93,
+      "ask": 5.06,
+      "delta": 0.2314,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 635.0,
+      "right": "P",
+      "bid": 38.94,
+      "ask": 39.09,
+      "delta": -0.8047,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 635.0,
+      "right": "C",
+      "bid": 3.94,
+      "ask": 4.08,
+      "delta": 0.1953,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 640.0,
+      "right": "P",
+      "bid": 43.12,
+      "ask": 43.28,
+      "delta": -0.8369,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 640.0,
+      "right": "C",
+      "bid": 3.12,
+      "ask": 3.28,
+      "delta": 0.1631,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 645.0,
+      "right": "P",
+      "bid": 47.44,
+      "ask": 47.61,
+      "delta": -0.8652,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 645.0,
+      "right": "C",
+      "bid": 2.44,
+      "ask": 2.61,
+      "delta": 0.1348,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 650.0,
+      "right": "P",
+      "bid": 51.89,
+      "ask": 52.08,
+      "delta": -0.8897,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 650.0,
+      "right": "C",
+      "bid": 1.89,
+      "ask": 2.08,
+      "delta": 0.1103,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 655.0,
+      "right": "P",
+      "bid": 56.44,
+      "ask": 56.64,
+      "delta": -0.9108,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 655.0,
+      "right": "C",
+      "bid": 1.44,
+      "ask": 1.65,
+      "delta": 0.0892,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 660.0,
+      "right": "P",
+      "bid": 61.07,
+      "ask": 61.29,
+      "delta": -0.9285,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 660.0,
+      "right": "C",
+      "bid": 1.07,
+      "ask": 1.29,
+      "delta": 0.0715,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 665.0,
+      "right": "P",
+      "bid": 65.78,
+      "ask": 66.02,
+      "delta": -0.9433,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 665.0,
+      "right": "C",
+      "bid": 0.78,
+      "ask": 1.02,
+      "delta": 0.0567,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 670.0,
+      "right": "P",
+      "bid": 70.56,
+      "ask": 70.81,
+      "delta": -0.9555,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 670.0,
+      "right": "C",
+      "bid": 0.56,
+      "ask": 0.81,
+      "delta": 0.0445,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 675.0,
+      "right": "P",
+      "bid": 75.38,
+      "ask": 75.64,
+      "delta": -0.9655,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 675.0,
+      "right": "C",
+      "bid": 0.38,
+      "ask": 0.65,
+      "delta": 0.0345,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 680.0,
+      "right": "P",
+      "bid": 80.24,
+      "ask": 80.52,
+      "delta": -0.9734,
+      "iv": 0.2
+    },
+    {
+      "expiration": "2026-09-25",
+      "strike": 680.0,
+      "right": "C",
+      "bid": 0.24,
+      "ask": 0.52,
+      "delta": 0.0266,
+      "iv": 0.2
+    }
+  ]
+}
